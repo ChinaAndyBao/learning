@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+xml 文件，需要在头部使用约束文件;
+
+DTD(document type definition)声明始终以!DOCTYPE开头,空一格后跟着文档根元素的名称。
+
+如果是内部DTD（私有DTD）,则再空一格出现[],在中括号中是文档类型定义的内容.
+而对于外部DTD,则又分为私有DTD与公共DTD,
+私有DTD使用 SYSTEM 表示,接着是外部DTD的URL.
+公共DTD则使用 PUBLIC,接着是DTD公共名称,接着是DTD的URL.
+
+公共DTD,DTD名称格式为 "注册//组织//类型 标签//语言",
+"注册"指示组织是否由国际标准化组织(ISO)注册,+表示是,-表示不是
+"组织"即组织名称,如: W3C ;
+"标签"是指定公开文本描述，即对所引用的公开文本的唯一描述性名称,后面可附带版本号。
+"语言"是DTD语言的ISO 639语言标识符,如:EN表示英文,ZH表示中文
+"类型"一般是DTD,
+
+-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://192.168.11.200:3306/va_demo"/>
+                <property name="username" value="wjl"/>
+                <property name="password" value="&amp;kK^v#e6HhBx"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mapper/UserMapper.xml"/>
+    </mappers>
+</configuration>
