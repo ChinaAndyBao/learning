@@ -1,6 +1,6 @@
 package cn.andybao;
 
-import cn.bao.andy.china.dao.Student;
+import cn.andybao.dao.Student;
 
 import java.util.Arrays;
 
